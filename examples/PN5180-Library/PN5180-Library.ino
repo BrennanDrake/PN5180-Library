@@ -75,21 +75,11 @@
 #include <PN5180.h>
 #include <PN5180ISO15693.h>
 
-#if defined(ARDUINO_AVR_UNO) || defined(ARDUINO_AVR_MEGA2560) || defined(ARDUINO_AVR_NANO)
 
-#define PN5180_NSS  10
-#define PN5180_BUSY 9
-#define PN5180_RST  7
+#define PN5180_NSS  8
+#define PN5180_BUSY 7
+#define PN5180_RST  9
 
-#elif defined(ARDUINO_ARCH_ESP32)
-
-#define PN5180_NSS  16
-#define PN5180_BUSY 5
-#define PN5180_RST  17
-
-#else
-#error Please define your pinout here!
-#endif
 
 PN5180ISO15693 nfc(PN5180_NSS, PN5180_BUSY, PN5180_RST);
 
